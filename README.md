@@ -5,3 +5,7 @@ Adds a new custom wire system into Factorio mainly meant for scripting purposes.
  **Mods that depend on this mod**:
 
 - [Scriptorio](https://github.com/murk108/scriptorio)
+
+**Dependencies**: 
+
+- [Murk Core](https://github.com/murk108/murk-core)
