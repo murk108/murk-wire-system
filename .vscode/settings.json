@@ -1,0 +1,9 @@
+{
+    "Lua.workspace.userThirdParty": [
+        "c:\\Users\\userm\\AppData\\Roaming\\Code\\User\\workspaceStorage\\b0179bac8b30dc11dd6f6bc7a9205935\\justarandomgeek.factoriomod-debug\\sumneko-3rd"
+    ],
+    "Lua.workspace.library": [
+        "${env:APPDATA}\\Factorio\\mods\\murk-core_1.0.0\\luaserver"
+    ],
+    "Lua.workspace.checkThirdParty": "ApplyInMemory"
+}

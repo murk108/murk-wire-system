@@ -1,0 +1,9 @@
+{
+    "name": "murk-wire-system",
+    "version": "1.0.0",
+    "title": "Murk Wire System",
+    "author": "murk108",
+    "description": "Wire system",
+    "factorio_version": "2.0",
+    "dependencies": ["base >= 2.0.0", "murk-core >= 1.0.0"]
+  }
