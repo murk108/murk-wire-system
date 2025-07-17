@@ -3,7 +3,7 @@ local function get_blueprint_graph(unit_number, connections, reverse_map)
     local total = 0
 
     for unit_number_2 in pairs(connections) do
-        if reverse_map[unit_number_2] then
+        if reverse_map[unit_number_2] then -- if the connection exists on the blueprint
             if unit_number > unit_number_2 then -- one directional counting
                 total = total + 1
             end
@@ -92,12 +92,12 @@ end)
 local function handle_on_spawned(id, old_id, blueprint_graphs, total_connections, group_id)
     old_id = tostring(old_id) -- neccessary because blueprint_graphs is in strings.
 
-    local get_graph = Wires.get_graph
-
     local total = storage.bp_wire_total[group_id] or total_connections
     local group = storage.bp_wire_groups[group_id] or {}
 
     group[old_id] = id
+
+    local get_graph = Wires.get_graph
 
     for wire_name, connections in pairs(blueprint_graphs) do
         local graph = get_graph(wire_name)
@@ -105,10 +105,8 @@ local function handle_on_spawned(id, old_id, blueprint_graphs, total_connections
         for old_id_2 in pairs(connections) do
             local id_2 = group[old_id_2]
 
-            if id_2 then
-                if graph:connect(id, id_2) then
-                    total = total - 1
-                end
+            if id_2 and graph:connect(id, id_2) then
+                total = total - 1
             end
         end
     end
